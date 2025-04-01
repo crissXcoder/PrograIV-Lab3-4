@@ -1,0 +1,134 @@
+/* HomeAnimations.css */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.home-title {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.home-title::after {
+  content: "🏠";
+  font-size: 1.5rem;
+  position: absolute;
+  top: 0;
+  margin-left: 10px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.logout-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(45deg, #7c4dff, #4e54c8);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.logout-button::before {
+  content: "👋";
+  position: absolute;
+  left: 10px;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  padding-left: 40px;
+}
+
+.logout-button:hover::before {
+  opacity: 1;
+}
+
+.logout-button:active {
+  transform: translateY(0);
+}
+
+/* Efecto de oscilación para el contenido */
+.home-content {
+  width: 100%;
+  z-index: 1;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+}
+
+/* Círculos decorativos flotantes */
+.circle-decoration {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 0;
+}
+
+.circle-1 {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  right: -30px;
+  animation: float 15s infinite linear;
+}
+
+.circle-2 {
+  width: 150px;
+  height: 150px;
+  bottom: -50px;
+  left: -50px;
+  animation: float 20s infinite linear reverse;
+}
+
+.circle-3 {
+  width: 70px;
+  height: 70px;
+  top: 50%;
+  right: 10%;
+  animation: float 12s infinite linear;
+}
+
+@keyframes float {
+  0% { transform: rotate(0deg) translate(0, 0); }
+  25% { transform: rotate(90deg) translate(10px, 10px); }
+  50% { transform: rotate(180deg) translate(0, 20px); }
+  75% { transform: rotate(270deg) translate(-10px, 10px); }
+  100% { transform: rotate(360deg) translate(0, 0); }
+}
